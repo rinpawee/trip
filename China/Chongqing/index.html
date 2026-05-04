@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chongqing — 4 Day Itinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C0392B;
+    --red-dark: #922B21;
+    --red-light: #FADBD8;
+    --dark: #0D0D0D;
+    --dark2: #1A1A1A;
+    --dark3: #2C2C2C;
+    --ink: #1C1C1C;
+    --muted: #6B6B6B;
+    --light: #F5F2EE;
+    --white: #FEFEFE;
+    --border: rgba(0,0,0,0.08);
+    --border-dark: rgba(255,255,255,0.1);
+    --d1: #C0392B;
+    --d2: #7B3FA0;
+    --d3: #1E8449;
+    --d4: #1A5276;
+    --gold: #C9A84C;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--dark);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(192,57,43,0.18) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(123,63,160,0.12) 0%, transparent 40%),
+      radial-gradient(circle at 60% 80%, rgba(30,132,73,0.10) 0%, transparent 40%);
+  }
+
+  .hero-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .nav-badges {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.5);
+    border-radius: 2px;
+  }
+
+  .hero-center {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 3rem;
+    gap: 2rem;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--red);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--red);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 2rem;
+    margin-top: 1rem;
+  }
+
+  .stat-item .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .stat-item .lbl {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-top: 0.4rem;
+  }
+
+  .hero-bottom {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .day-pill {
+    padding: 1.5rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+  .day-pill:last-child { border-right: none; }
+  .day-pill:hover { background: rgba(255,255,255,0.04); }
+
+  .day-pill .dp-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .day-pill .dp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .day-pill .dp-sub {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 0.3rem;
+  }
+
+  /* ── SECTION STRUCTURE ── */
+  .day-section {
+    padding: 0;
+    position: relative;
+  }
+
+  .day-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dh-left {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .dh-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    color: var(--white);
+  }
+
+  .dh-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .dh-right {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* Day color themes */
+  .day-1 .day-header { background: rgba(245,242,238,0.95); }
+  .day-1 .dh-num { background: var(--d1); }
+  .day-1 .dh-title { color: var(--d1); }
+
+  .day-2 .day-header { background: rgba(245,242,238,0.95); }
+  .day-2 .dh-num { background: var(--d2); }
+  .day-2 .dh-title { color: var(--d2); }
+
+  .day-3 .day-header { background: rgba(245,242,238,0.95); }
+  .day-3 .dh-num { background: var(--d3); }
+  .day-3 .dh-title { color: var(--d3); }
+
+  .day-4 .day-header { background: rgba(245,242,238,0.95); }
+  .day-4 .dh-num { background: var(--d4); }
+  .day-4 .dh-title { color: var(--d4); }
+
+  /* ── STOPS GRID ── */
+  .stops-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 100px;
+  }
+
+  .stops-timeline {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-right: 1px solid var(--border);
+  }
+
+  .stops-timeline::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+
+  .tl-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem 0;
+    width: 100%;
+  }
+
+  .tl-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    background: var(--light);
+    padding: 0.2rem 0.6rem;
+  }
+
+  .tl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--light);
+  }
+
+  .tl-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.4;
+  }
+
+  /* ── STOP CARDS ── */
+  .stops-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .stop-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .stop-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+
+  .stop-card.featured {
+    grid-template-columns: 1fr;
+  }
+
+  .stop-img-wrap {
+    position: relative;
+    overflow: hidden;
+    background: #E8E4DF;
+    min-height: 180px;
+  }
+
+  .stop-card.featured .stop-img-wrap {
+    min-height: 260px;
+  }
+
+  .stop-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+
+  .stop-card:hover .stop-img-wrap img { transform: scale(1.04); }
+
+  .stop-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: inherit;
+  }
+
+  .stop-img-placeholder .ph-emoji {
+    font-size: 2.5rem;
+  }
+
+  .stop-img-placeholder .ph-text {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  .stop-category-tag {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    background: rgba(0,0,0,0.65);
+    color: rgba(255,255,255,0.9);
+    border-radius: 2px;
+  }
+
+  .stop-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .stop-card.featured .stop-body {
+    padding: 1.75rem 2rem;
+  }
+
+  .stop-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .stop-card.featured .stop-name {
+    font-size: 1.6rem;
+  }
+
+  .stop-chinese {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-left: 0.5rem;
+  }
+
+  .stop-desc {
+    font-size: 0.88rem;
+    color: #4A4A4A;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .stop-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+  .map-link:hover { opacity: 0.85; }
+
+  .tip-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    font-weight: 400;
+  }
+
+  /* ── FOOD CHIPS ── */
+  .food-row {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  .food-row-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .food-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .food-chip {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+    color: var(--ink);
+  }
+
+  .food-chip strong {
+    font-weight: 500;
+    margin-right: 0.3rem;
+  }
+
+  /* ── TIPS BOX ── */
+  .tips-section {
+    padding: 1.5rem 2rem;
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .tips-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 1rem;
+  }
+
+  .tips-list {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .tip-item::before {
+    content: '→';
+    color: var(--red);
+    font-size: 0.8rem;
+    margin-top: 0.05rem;
+    flex-shrink: 0;
+  }
+
+  /* ── DIVIDER ── */
+  .day-divider {
+    height: 3px;
+  }
+
+  /* ── PRACTICAL SECTION ── */
+  .practical {
+    background: var(--dark2);
+    padding: 5rem 3rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .practical-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .practical-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .practical-sub {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+  }
+
+  .practical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .practical-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+
+  .pc-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .pc-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.5rem;
+  }
+
+  .pc-content {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── FOOD CHEAT SHEET ── */
+  .food-sheet {
+    background: var(--white);
+    padding: 5rem 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .sheet-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .sheet-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .food-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .food-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .food-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .food-table tr:last-child td { border-bottom: none; }
+
+  .food-table tr:hover td { background: var(--light); }
+
+  .food-zh {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    display: block;
+  }
+
+  .food-en {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+    display: block;
+  }
+
+  .food-desc-td {
+    font-size: 0.88rem;
+    color: #4A4A4A;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .food-where {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--dark);
+    padding: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: gap;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .footer-brand span { color: var(--red); }
+
+  .footer-info {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.25);
+    text-align: right;
+  }
+
+  /* ── UTILITIES ── */
+  .sep {
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero-title { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-subtitle { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-stats { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-bottom { animation: fadeUp 0.6s 0.4s ease both; }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-nav { padding: 1.5rem; }
+    .hero-center { padding: 3rem 1.5rem; }
+    .hero-bottom { grid-template-columns: repeat(2, 1fr); }
+    .stops-grid { grid-template-columns: 1fr; }
+    .stops-timeline { display: none; }
+    .stop-card { grid-template-columns: 1fr; }
+    .stop-img-wrap { min-height: 200px; }
+    .day-header { padding: 1rem 1.5rem; }
+    .stops-content { padding: 1.5rem; }
+    .food-row { padding: 1.5rem; }
+    .practical { padding: 3rem 1.5rem; }
+    .food-sheet { padding: 3rem 1.5rem; }
+    .footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; }
+    .footer-info { text-align: left; }
+  }
+
+  @media (max-width: 580px) {
+    .hero-bottom { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 1.5rem; }
+    .nav-badges { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-overlay"></div>
+
+  <nav class="hero-nav">
+    <div class="nav-logo">Chongqing · Travel Guide</div>
+    <div class="nav-badges">
+      <span class="badge">Group 6–7</span>
+      <span class="badge">Summer</span>
+      <span class="badge">4 Days</span>
+    </div>
+  </nav>
+
+  <div class="hero-center">
+    <div class="hero-eyebrow">The Mountain City</div>
+    <h1 class="hero-title">
+      Chong<em>qing</em><br>in Four Days
+    </h1>
+    <p class="hero-subtitle">
+      Neon cliffs over rivers, monorails through apartment buildings,
+      UNESCO karst canyons, and hotpot in 40°C heat.
+      Chongqing is unlike anywhere on earth.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="num">12</div><div class="lbl">Key Stops</div></div>
+      <div class="stat-item"><div class="num">1</div><div class="lbl">Day Trip</div></div>
+      <div class="stat-item"><div class="num">¥2–3k</div><div class="lbl">Per Person</div></div>
+      <div class="stat-item"><div class="num">35°C+</div><div class="lbl">Summer Heat</div></div>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <a href="#day1" class="day-pill">
+      <div class="dp-num" style="color:var(--d1)">Day 01</div>
+      <div class="dp-title">Arrive &amp; Feel</div>
+      <div class="dp-sub">Hongya Cave · First Hotpot</div>
+    </a>
+    <a href="#day2" class="day-pill">
+      <div class="dp-num" style="color:var(--d2)">Day 02</div>
+      <div class="dp-title">Vertical City</div>
+      <div class="dp-sub">Eling · Monorail · Raffles</div>
+    </a>
+    <a href="#day3" class="day-pill">
+      <div class="dp-num" style="color:var(--d3)">Day 03</div>
+      <div class="dp-title">Wulong Trip</div>
+      <div class="dp-sub">UNESCO Karst · Bridges</div>
+    </a>
+    <a href="#day4" class="day-pill">
+      <div class="dp-num" style="color:var(--d4)">Day 04</div>
+      <div class="dp-title">Culture &amp; Depart</div>
+      <div class="dp-sub">Ciqikou · Museum · CKG</div>
+    </a>
+  </div>
+</header>
+
+
+<!-- ══════════ DAY 1 ══════════ -->
+<section class="day-section day-1" id="day1">
+  <div class="day-divider" style="background:var(--d1)"></div>
+  <div class="day-header">
+    <div class="dh-left">
+      <span class="dh-num">Day 01</span>
+      <span class="dh-title">Arrive &amp; Feel the City</span>
+    </div>
+    <div class="dh-right">Afternoon → Late Evening</div>
+  </div>
+
+  <div class="stops-grid">
+    <div class="stops-timeline">
+      <div class="tl-entry">
+        <div class="tl-time">PM</div>
+        <div class="tl-dot" style="background:var(--d1)"></div>
+        <div class="tl-label">Check in &amp; orient</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">6:30</div>
+        <div class="tl-dot" style="background:var(--d1)"></div>
+        <div class="tl-label">Dusk walk</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">8 PM</div>
+        <div class="tl-dot" style="background:var(--d1)"></div>
+        <div class="tl-label">Dinner</div>
+      </div>
+    </div>
+
+    <div class="stops-content">
+
+      <!-- Stop 1 -->
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#EAE4DC">
+            <div class="ph-emoji">🏨</div>
+            <div class="ph-text">Jiefangbei CBD</div>
+          </div>
+          <span class="stop-category-tag">Base Camp</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Jiefangbei CBD <span class="stop-chinese">解放碑</span></div>
+          </div>
+          <p class="stop-desc">
+            Stay in the central business district — underground malls, elevated walkways,
+            and street food stalls layered on top of each other. Everything is walking distance.
+            The Liberation Monument stands in the center, surrounded by the city's wildest
+            pedestrian energy.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d1)"
+               href="https://www.google.com/maps/place/?q=place_id:ChIJ1S7X6oY0kzYRIyiS3lG6Abg" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:var(--red-light);color:var(--red-dark)">Stay here — best location</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stop 2 -->
+      <div class="stop-card featured reveal">
+        <div class="stop-img-wrap">
+          <img src="https://images.pexels.com/photos/6158651/pexels-photo-6158651.jpeg?auto=compress&cs=tinysrgb&w=900"
+               alt="Hongya Cave neon lights at night over Jialing River"
+               onerror="this.parentElement.innerHTML='<div class=\'stop-img-placeholder\' style=\'background:#2C2C2C\'><div class=\'ph-emoji\'>🌆</div><div class=\'ph-text\' style=\'color:#888\'>Hongya Cave</div></div>'">
+          <span class="stop-category-tag">Landmark · Evening</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Hongya Cave <span class="stop-chinese">洪崖洞</span></div>
+          </div>
+          <p class="stop-desc">
+            The 11-story cliffside building complex that defines Chongqing's image — 
+            best experienced at dusk (6:30–7pm) as it lights up neon over the Jialing River.
+            Don't eat inside (overpriced tourist food) — explore and photograph. 
+            Then walk the Binjiang Road riverside promenade toward Chaotianmen, 
+            the confluence of the Yangtze and Jialing rivers. At night, bridges lit up 
+            and ferries passing below — genuinely cinematic.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d1)"
+               href="https://www.google.com/maps/place/?q=place_id:ChIJw2Yqr4E0kzYRwPSNgwikEQY" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#FDF2E9;color:#935116">Go at 6:30pm for the glow</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stop 3 -->
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#2D1010">
+            <div class="ph-emoji">🔥</div>
+            <div class="ph-text" style="color:#C0392B">Liu Yishou Hotpot</div>
+          </div>
+          <span class="stop-category-tag">Dinner · Must-Do</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Liu Yishou Hotpot <span class="stop-chinese">刘一手火锅</span></div>
+          </div>
+          <p class="stop-desc">
+            Local chain beloved by Chongqing residents — not a tourist trap.
+            Order the split pot (half spicy / half mild). 
+            Must-orders: beef tripe (毛肚), duck intestines (鸭肠), fatty beef (肥牛), 
+            lotus root, tofu skin. The sesame dipping sauce is everything. 
+            Hotpot in 35°C heat is a Chongqing tradition — locals believe spicy food 
+            makes you sweat and cool down. Lean in.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d1)"
+               href="https://www.google.com/maps/search/?api=1&query=Liu+Yishou+Hotpot+Jiefangbei+Chongqing" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:var(--red-light);color:var(--red-dark)">Split pot → half spicy</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="food-row reveal">
+    <div class="food-row-label">Tonight's order hits</div>
+    <div class="food-chips">
+      <div class="food-chip"><strong>毛肚</strong> Beef tripe</div>
+      <div class="food-chip"><strong>鸭肠</strong> Duck intestines</div>
+      <div class="food-chip"><strong>肥牛</strong> Fatty beef slices</div>
+      <div class="food-chip"><strong>莲藕</strong> Lotus root</div>
+      <div class="food-chip"><strong>豆皮</strong> Tofu skin</div>
+      <div class="food-chip"><strong>芝麻酱</strong> Sesame dip</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ DAY 2 ══════════ -->
+<section class="day-section day-2" id="day2">
+  <div class="day-divider" style="background:var(--d2)"></div>
+  <div class="day-header">
+    <div class="dh-left">
+      <span class="dh-num">Day 02</span>
+      <span class="dh-title">The Dramatic Vertical City</span>
+    </div>
+    <div class="dh-right">7am → Evening</div>
+  </div>
+
+  <div class="stops-grid">
+    <div class="stops-timeline">
+      <div class="tl-entry">
+        <div class="tl-time">7 AM</div>
+        <div class="tl-dot" style="background:var(--d2)"></div>
+        <div class="tl-label">Beat the heat</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">10 AM</div>
+        <div class="tl-dot" style="background:var(--d2)"></div>
+        <div class="tl-label">Unique transit</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">2 PM</div>
+        <div class="tl-dot" style="background:var(--d2)"></div>
+        <div class="tl-label">250m heights</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">7 PM</div>
+        <div class="tl-dot" style="background:var(--d2)"></div>
+        <div class="tl-label">Noodle dinner</div>
+      </div>
+    </div>
+
+    <div class="stops-content">
+
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#1A0D2E">
+            <div class="ph-emoji">🌄</div>
+            <div class="ph-text" style="color:#9B59B6">Eling Park Panorama</div>
+          </div>
+          <span class="stop-category-tag">Viewpoint · Free</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Eling Park <span class="stop-chinese">鹅岭公园</span></div>
+          </div>
+          <p class="stop-desc">
+            Hilltop park where locals do morning exercise with a panoramic view of the whole city.
+            The Liangjiang Overlook here is one of the best free viewpoints in China — 
+            both the Yangtze and Jialing rivers visible at once.
+            Early morning light is stunning and crowd-free. Walk down through Eling Zhengdao 
+            heritage lane for a slow breakfast coffee at one of the indie cafés.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d2)"
+               href="https://www.google.com/maps/place/?q=place_id:ChIJu9XkaLU0kzYRjkeA8L0mSzU" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#F4ECF7;color:#6C3483">Go by 7am — crowd-free</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#0F0520">
+            <div class="ph-emoji">🚝</div>
+            <div class="ph-text" style="color:#9B59B6">Monorail through building</div>
+          </div>
+          <span class="stop-category-tag">Icon · Unique</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Liziba Station — train through a building</div>
+          </div>
+          <p class="stop-desc">
+            Metro Line 2 passes directly through a residential apartment building on floors 6–8.
+            Locals just living their lives while a monorail glides through their windows.
+            Ride it, then cross to the observation platform for the exterior shot.
+            This is Chongqing in miniature — a city so spatially constrained that 
+            the impossible became infrastructure.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d2)"
+               href="https://www.google.com/maps/place/?q=place_id:ChIJ0xGJvrQ0kzYRST6Mr6HT5kc" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#F4ECF7;color:#6C3483">Cross road for best photo angle</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-card featured reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#1C0E2A;min-height:220px">
+            <div class="ph-emoji">🌁</div>
+            <div class="ph-text" style="color:#9B59B6">Crystal Link · 250m altitude</div>
+          </div>
+          <span class="stop-category-tag">Architecture · Views</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Raffles City Crystal Link</div>
+          </div>
+          <p class="stop-desc">
+            Eight skyscrapers connected at the top by a horizontal sky bridge — the Crystal Link —
+            at 250 meters above ground. The view looking down at the Yangtze–Jialing confluence 
+            is vertigo-inducing in the best way. Rest from the midday heat in the 
+            underground Jiefangbei mall network before going up.
+            Evening: find a hole-in-the-wall shop for Xiaomian (小面) — 
+            spicy noodles under ¥15, follow with cold Ci Ba (糍粑) from a street vendor.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d2)"
+               href="https://www.google.com/maps/place/?q=place_id:ChIJAzsiqHg0kzYRJ9pNTXsaYFw" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#F4ECF7;color:#6C3483">Midday: AC malls below</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="food-row reveal">
+    <div class="food-row-label">Evening street food</div>
+    <div class="food-chips">
+      <div class="food-chip"><strong>小面</strong> Spicy noodles — ¥15</div>
+      <div class="food-chip"><strong>糍粑</strong> Sticky rice cake</div>
+      <div class="food-chip"><strong>酸辣粉</strong> Sour-spicy glass noodles</div>
+      <div class="food-chip"><strong>冰粉</strong> Cold jelly dessert</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ DAY 3 ══════════ -->
+<section class="day-section day-3" id="day3">
+  <div class="day-divider" style="background:var(--d3)"></div>
+  <div class="day-header">
+    <div class="dh-left">
+      <span class="dh-num">Day 03</span>
+      <span class="dh-title">Wulong Day Trip — Trip Highlight</span>
+    </div>
+    <div class="dh-right">7am depart → 7pm return</div>
+  </div>
+
+  <div class="stops-grid">
+    <div class="stops-timeline">
+      <div class="tl-entry">
+        <div class="tl-time">7 AM</div>
+        <div class="tl-dot" style="background:var(--d3)"></div>
+        <div class="tl-label">Depart early</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">9:30</div>
+        <div class="tl-dot" style="background:var(--d3)"></div>
+        <div class="tl-label">Sinkholes</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">11 AM</div>
+        <div class="tl-dot" style="background:var(--d3)"></div>
+        <div class="tl-label">★ Stone bridges</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">Optional</div>
+        <div class="tl-dot" style="background:var(--d3)"></div>
+        <div class="tl-label">Cave add-on</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">7 PM</div>
+        <div class="tl-dot" style="background:var(--d3)"></div>
+        <div class="tl-label">Back in city</div>
+      </div>
+    </div>
+
+    <div class="stops-content">
+
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#0A2010">
+            <div class="ph-emoji">🚐</div>
+            <div class="ph-text" style="color:#27AE60">Private van to Wulong</div>
+          </div>
+          <span class="stop-category-tag">Transport · 2.5hrs</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Drive to Wulong Karst Park <span class="stop-chinese">武隆喀斯特</span></div>
+          </div>
+          <p class="stop-desc">
+            Hire a private van for the group — ~¥600–800 round trip for 6–7 people, 
+            far easier than public transit and worth every yuan.
+            Leave by 7am to beat the heat and midday crowds.
+            Wulong is a UNESCO World Heritage Site 2.5 hours from central Chongqing.
+            Bring water, sunscreen, and closed-toe shoes.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d3)"
+               href="https://www.google.com/maps/search/?api=1&query=Wulong+Karst+National+Geology+Park+Chongqing" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#E9F7EF;color:#1E8449">Van ¥600–800 return</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#081A0C">
+            <div class="ph-emoji">🕳️</div>
+            <div class="ph-text" style="color:#27AE60">Karst sinkholes</div>
+          </div>
+          <span class="stop-category-tag">UNESCO · Karst</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Tiankeng Difeng <span class="stop-chinese">天坑地缝</span></div>
+          </div>
+          <p class="stop-desc">
+            Three massive karst sinkholes the size of stadiums connected by underground rivers 
+            and sheer cliff paths. Walk the canyon floor between them.
+            Absolutely otherworldly — the scale is impossible to convey in photos.
+            The canyon walls tower hundreds of meters, carved by rivers over millions of years.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d3)"
+               href="https://www.google.com/maps/search/?api=1&query=Tiankeng+Difeng+Wulong+Chongqing" target="_blank">
+              ↗ Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-card featured reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#061205;min-height:220px">
+            <div class="ph-emoji">🌉</div>
+            <div class="ph-text" style="color:#27AE60">★ Three Natural Bridges</div>
+          </div>
+          <span class="stop-category-tag">★ Trip Highlight · UNESCO</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Three Natural Bridges <span class="stop-chinese">天生三桥</span></div>
+          </div>
+          <p class="stop-desc">
+            Three colossal natural stone arches stacked in sequence over a gorge —
+            the filming location for Transformers: Age of Extinction and parts of Mission Impossible.
+            The landscape looks genuinely alien. Scale is hard to comprehend until you're 
+            standing inside one of the arches, which soar 200+ meters overhead.
+            Allow 2–3 hours for the full walk. The path is well-maintained even in hot weather.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d3)"
+               href="https://www.google.com/maps/place/?q=place_id:ChIJE6CWTULEkzYRq-uUeYiIhro" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#E9F7EF;color:#1E8449">2–3hr walk · proper shoes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#0D1F10">
+            <div class="ph-emoji">💎</div>
+            <div class="ph-text" style="color:#27AE60">Furong Cave — optional</div>
+          </div>
+          <span class="stop-category-tag">Optional Add-On</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Furong Cave <span class="stop-chinese">芙蓉洞</span></div>
+          </div>
+          <p class="stop-desc">
+            Vast illuminated stalactite cave system — add this if energy and time allow.
+            Spectacular formations throughout. Skip if the group is tired after the bridges 
+            — the walk is 4–6km total and the heat takes its toll.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d3)"
+               href="https://www.google.com/maps/search/?api=1&query=Furong+Cave+Wulong+Chongqing" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#E9F7EF;color:#1E8449">Only if energy allows</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#0A1A0A">
+            <div class="ph-emoji">🐟</div>
+            <div class="ph-text" style="color:#27AE60">Grilled fish dinner</div>
+          </div>
+          <span class="stop-category-tag">Dinner · Back in City</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Chongqing Grilled Fish <span class="stop-chinese">烤鱼</span> — Nanbin Road</div>
+          </div>
+          <p class="stop-desc">
+            Back in Chongqing by 7pm. Low-key dinner — the fish arrives on an iron plate 
+            surrounded by chilies, pickled vegetables, and herbs. 
+            Order a few cold Chongqing beers. Head to a riverside spot on Nanbin Road 
+            for the evening skyline view over the Yangtze.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d3)"
+               href="https://www.google.com/maps/place/?q=place_id:ChIJF5DG_mA0kzYR0Rho0wmGltM" target="_blank">
+              ↗ Nanbin Road Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tips-section reveal">
+    <div class="tips-label">Day 3 Essentials</div>
+    <div class="tips-list">
+      <div class="tip-item">Leave by 7am sharp — heat and crowds build fast after 11am</div>
+      <div class="tip-item">Pack: water, sunscreen, closed-toe shoes — 4–6km walking total</div>
+      <div class="tip-item">Private van ~¥600–800 return for 6–7 people (negotiate night before)</div>
+      <div class="tip-item">Total park walking: ~4–6km — pace yourselves</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ DAY 4 ══════════ -->
+<section class="day-section day-4" id="day4">
+  <div class="day-divider" style="background:var(--d4)"></div>
+  <div class="day-header">
+    <div class="dh-left">
+      <span class="dh-num">Day 04</span>
+      <span class="dh-title">Culture, Old Town &amp; Depart</span>
+    </div>
+    <div class="dh-right">7am → Airport CKG</div>
+  </div>
+
+  <div class="stops-grid">
+    <div class="stops-timeline">
+      <div class="tl-entry">
+        <div class="tl-time">7 AM</div>
+        <div class="tl-dot" style="background:var(--d4)"></div>
+        <div class="tl-label">Old town</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">10:30</div>
+        <div class="tl-dot" style="background:var(--d4)"></div>
+        <div class="tl-label">Guild hall</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">1 PM</div>
+        <div class="tl-dot" style="background:var(--d4)"></div>
+        <div class="tl-label">Free museum</div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-time">4 PM</div>
+        <div class="tl-dot" style="background:var(--d4)"></div>
+        <div class="tl-label">Depart</div>
+      </div>
+    </div>
+
+    <div class="stops-content">
+
+      <div class="stop-card featured reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#051018;min-height:200px">
+            <div class="ph-emoji">🏘️</div>
+            <div class="ph-text" style="color:#1A5276">Ciqikou Ancient Town</div>
+          </div>
+          <span class="stop-category-tag">Heritage · Go Early</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Ciqikou Ancient Town <span class="stop-chinese">磁器口</span></div>
+          </div>
+          <p class="stop-desc">
+            A Ming Dynasty river-town that survived modernization — stone alleyways, 
+            tea houses, temples, and craft vendors. At 7am it's just locals buying breakfast
+            and elderly residents playing chess. By 10am the tourist buses arrive, 
+            so go early and be efficient. 
+            Must-eat: Mao Xuewang (毛血旺) — offal, tofu, vegetables in blood-red spicy broth.
+            Also try hemp-spiced duck jaw (麻辣鸭脖) from street vendors.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d4)"
+               href="https://www.google.com/maps/place/?q=place_id:ChIJ8xTyJvjL7DYRaxlsvpdbeTE" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#EBF5FB;color:#1A5276">Leave before 10am crowds</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#06101A">
+            <div class="ph-emoji">🏯</div>
+            <div class="ph-text" style="color:#1A5276">Huguang Guild Hall</div>
+          </div>
+          <span class="stop-category-tag">History · Rarely Crowded</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Huguang Guild Hall <span class="stop-chinese">湖广会馆</span></div>
+          </div>
+          <p class="stop-desc">
+            Stunning Qing Dynasty complex (1759) overlooking the Yangtze.
+            Intricate wood carvings, courtyards, and a museum about Chongqing's 
+            river migration history. Rarely crowded and genuinely beautiful.
+            Traditional Chinese opera performances are available via booking —
+            the old teahouse setting makes it unforgettable.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d4)"
+               href="https://www.google.com/maps/place/?q=place_id:ChIJd2EaHnw0kzYRczrAN-5SIYs" target="_blank">
+              ↗ Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#060E18">
+            <div class="ph-emoji">🏛️</div>
+            <div class="ph-text" style="color:#1A5276">Three Gorges Museum</div>
+          </div>
+          <span class="stop-category-tag">Museum · Free · AC</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Three Gorges Museum <span class="stop-chinese">三峡博物馆</span></div>
+          </div>
+          <p class="stop-desc">
+            Massive, air-conditioned, free, and excellent — perfect midday escape from the heat.
+            The WWII Chongqing resistance exhibition is especially moving: 
+            the city was bombed heavily by Japan while serving as China's wartime capital.
+            Give it 2 hours. Located next to the People's Square.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d4)"
+               href="https://www.google.com/maps/search/?api=1&query=Chongqing+Three+Gorges+Museum" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#EBF5FB;color:#1A5276">Free entry · 2 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-card reveal">
+        <div class="stop-img-wrap">
+          <div class="stop-img-placeholder" style="background:#04080F">
+            <div class="ph-emoji">✈️</div>
+            <div class="ph-text" style="color:#1A5276">Jiangbei Airport CKG</div>
+          </div>
+          <span class="stop-category-tag">Depart</span>
+        </div>
+        <div class="stop-body">
+          <div>
+            <div class="stop-name">Jiangbei Airport <span class="stop-chinese">重庆江北机场</span> · CKG</div>
+          </div>
+          <p class="stop-desc">
+            Metro Line 10 to CKG takes 45 min — fast, cheap, and reliable.
+            For a group with luggage, a Didi van is ¥80–100 and more comfortable.
+            Grab Jiefangbei souvenirs before heading out: 
+            hotpot spice bases (火锅底料), Sichuan peppercorn (花椒), local baijiu (白酒), 
+            or handmade lacquerware from Ciqikou.
+          </p>
+          <div class="stop-footer">
+            <a class="map-link" style="background:var(--d4)"
+               href="https://www.google.com/maps/search/?api=1&query=Chongqing+Jiangbei+Airport+CKG" target="_blank">
+              ↗ Google Maps
+            </a>
+            <span class="tip-tag" style="background:#EBF5FB;color:#1A5276">Metro Line 10 · 45 min</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="food-row reveal">
+    <div class="food-row-label">Day 4 food stops</div>
+    <div class="food-chips">
+      <div class="food-chip"><strong>毛血旺</strong> Offal in spicy broth</div>
+      <div class="food-chip"><strong>麻辣鸭脖</strong> Spiced duck jaw</div>
+      <div class="food-chip"><strong>火锅底料</strong> Hotpot base (souvenir)</div>
+      <div class="food-chip"><strong>花椒</strong> Sichuan peppercorn</div>
+      <div class="food-chip"><strong>白酒</strong> Local baijiu</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FOOD CHEAT SHEET ══════════ -->
+<section class="food-sheet">
+  <div class="sheet-header">
+    <h2 class="sheet-title">Food Cheat Sheet</h2>
+    <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--muted);letter-spacing:0.1em">6 essential dishes</span>
+  </div>
+
+  <table class="food-table">
+    <thead>
+      <tr>
+        <th style="width:20%">Dish</th>
+        <th style="width:35%">What it is</th>
+        <th style="width:25%">Where to find</th>
+        <th style="width:20%">When</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="food-zh">火锅</span><span class="food-en">Hotpot</span></td>
+        <td class="food-desc-td">Spicy communal broth, cook-your-own at the table. Order split pot (half mild) for first-timers.</td>
+        <td class="food-where">Everywhere — ask locals for non-tourist recs</td>
+        <td class="food-where">Day 1 dinner</td>
+      </tr>
+      <tr>
+        <td><span class="food-zh">小面</span><span class="food-en">Xiaomian noodles</span></td>
+        <td class="food-desc-td">Spicy noodles, the city's soul food. Under ¥15 a bowl. Endlessly customizable heat level.</td>
+        <td class="food-where">Street shops, hole-in-the-wall near hotel</td>
+        <td class="food-where">Day 2 dinner</td>
+      </tr>
+      <tr>
+        <td><span class="food-zh">毛血旺</span><span class="food-en">Mao Xuewang</span></td>
+        <td class="food-desc-td">Offal, tofu, and vegetables in a blood-red spicy broth. Punchy and polarizing.</td>
+        <td class="food-where">Ciqikou street stalls, local restaurants</td>
+        <td class="food-where">Day 4 morning</td>
+      </tr>
+      <tr>
+        <td><span class="food-zh">烤鱼</span><span class="food-en">Grilled fish</span></td>
+        <td class="food-desc-td">Fish on an iron plate surrounded by chilies, pickled veg, and herbs. Order cold beers.</td>
+        <td class="food-where">Nanbin Road riverside restaurants</td>
+        <td class="food-where">Day 3 dinner</td>
+      </tr>
+      <tr>
+        <td><span class="food-zh">酸辣粉</span><span class="food-en">Glass noodles</span></td>
+        <td class="food-desc-td">Tangy, numbing, addictive. The Sichuan peppercorn numbs your tongue — it's a feature.</td>
+        <td class="food-where">Night markets, street stalls</td>
+        <td class="food-where">Anytime</td>
+      </tr>
+      <tr>
+        <td><span class="food-zh">糍粑</span><span class="food-en">Ci Ba</span></td>
+        <td class="food-desc-td">Sticky glutinous rice cake, grilled or fried. Sweet version with sesame is the best late-night snack.</td>
+        <td class="food-where">Street vendors, Ciqikou</td>
+        <td class="food-where">Anytime</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ══════════ PRACTICAL ══════════ -->
+<section class="practical">
+  <div class="practical-header">
+    <h2 class="practical-title">Practical Info</h2>
+    <span class="practical-sub">Everything you actually need to know</span>
+  </div>
+  <div class="practical-grid">
+    <div class="practical-card">
+      <div class="pc-icon">🚇</div>
+      <div class="pc-title">Getting Around</div>
+      <div class="pc-content">Metro covers all key spots. Didi (Chinese Uber) for groups — download and link a card before arrival. Walking is often best — vertical terrain means unexpected views everywhere.</div>
+    </div>
+    <div class="practical-card">
+      <div class="pc-icon">💳</div>
+      <div class="pc-title">Payment</div>
+      <div class="pc-content">WeChat Pay or Alipay essential. Most street food and small restaurants don't accept cards. Bring ¥2,000–3,000 per person for 4 days. Ask your bank about adding a card to WeChat Pay beforehand.</div>
+    </div>
+    <div class="practical-card">
+      <div class="pc-icon">🌡️</div>
+      <div class="pc-title">Summer Heat</div>
+      <div class="pc-content">35–40°C, very humid. Do all outdoor activities before 11am or after 5pm. Use midday for air-conditioned museums and underground malls. Stay hydrated obsessively.</div>
+    </div>
+    <div class="practical-card">
+      <div class="pc-icon">📱</div>
+      <div class="pc-title">Apps to Download</div>
+      <div class="pc-content">Didi (transport), Pleco (dictionary), Google Translate with Chinese offline pack. Most younger locals understand basic pointing + phone translation.</div>
+    </div>
+    <div class="practical-card">
+      <div class="pc-icon">🍽️</div>
+      <div class="pc-title">Group Dining</div>
+      <div class="pc-content">For 6–7 people, always book restaurants via hotel concierge or WeChat contact ahead. Walk-ins for large groups at popular spots often wait 1–2 hours.</div>
+    </div>
+    <div class="practical-card">
+      <div class="pc-icon">✈️</div>
+      <div class="pc-title">Airport (CKG)</div>
+      <div class="pc-content">Jiangbei Airport is 45 min from downtown via Metro Line 10 — fast, cheap, reliable. Didi van for group with luggage: ¥80–100. Allow 2.5hr buffer.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="footer-brand">Chong<span>qing</span> 🌶️</div>
+  <div class="footer-info">
+    <div>4-Day Itinerary · Group of 6–7</div>
+    <div style="margin-top:0.3rem">Summer Edition · Chongqing, China</div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
